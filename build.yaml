@@ -19,4 +19,6 @@
 #
 ---
 include:
-  - board: nice_nano_v2
+  - board: sumone96
+#    snippet: studio-rpc-usb-uart
+#    cmake-args: -DCONFIG_ZMK_STUDIO=y
