@@ -19,32 +19,32 @@
         diode-direction = "col2row";
         wakeup-source;
         row-gpios
-            = <$gpio0 2  GPIO_ACTIVE_HIGH>
-            , <$gpio1 15 GPIO_ACTIVE_HIGH>
-            , <$gpio0 9  GPIO_ACTIVE_HIGH>
-            , <$gpio0 10 GPIO_ACTIVE_HIGH>
-            , <$gpio1 11 GPIO_ACTIVE_HIGH>
-            , <$gpio1 13 GPIO_ACTIVE_HIGH>
+            = <&gpio0 2  GPIO_ACTIVE_HIGH>
+            , <&gpio1 15 GPIO_ACTIVE_HIGH>
+            , <&gpio0 9  GPIO_ACTIVE_HIGH>
+            , <&gpio0 10 GPIO_ACTIVE_HIGH>
+            , <&gpio1 11 GPIO_ACTIVE_HIGH>
+            , <&gpio1 13 GPIO_ACTIVE_HIGH>
         ;
         col-gpios
-            = <$shifter 4  GPIO_ACTIVE_HIGH>
-            , <$shifter 3  GPIO_ACTIVE_HIGH>
-            , <$shifter 2  GPIO_ACTIVE_HIGH>
-            , <$shifter 1  GPIO_ACTIVE_HIGH>
-            , <$shifter 5  GPIO_ACTIVE_HIGH>
-            , <$shifter 12 GPIO_ACTIVE_HIGH>
-            , <$shifter 24 GPIO_ACTIVE_HIGH>
-            , <$shifter 23 GPIO_ACTIVE_HIGH>
-            , <$shifter 22 GPIO_ACTIVE_HIGH>
-            , <$shifter 21 GPIO_ACTIVE_HIGH>
-            , <$shifter 20 GPIO_ACTIVE_HIGH>
-            , <$shifter 19 GPIO_ACTIVE_HIGH>
-            , <$shifter 11 GPIO_ACTIVE_HIGH>
-            , <$shifter 10 GPIO_ACTIVE_HIGH>
-            , <$shifter 9  GPIO_ACTIVE_HIGH>
-            , <$shifter 8  GPIO_ACTIVE_HIGH>
-            , <$shifter 7  GPIO_ACTIVE_HIGH>
-            , <$shifter 6  GPIO_ACTIVE_HIGH>
+            = <&shifter 4  GPIO_ACTIVE_HIGH>
+            , <&shifter 3  GPIO_ACTIVE_HIGH>
+            , <&shifter 2  GPIO_ACTIVE_HIGH>
+            , <&shifter 1  GPIO_ACTIVE_HIGH>
+            , <&shifter 5  GPIO_ACTIVE_HIGH>
+            , <&shifter 12 GPIO_ACTIVE_HIGH>
+            , <&shifter 24 GPIO_ACTIVE_HIGH>
+            , <&shifter 23 GPIO_ACTIVE_HIGH>
+            , <&shifter 22 GPIO_ACTIVE_HIGH>
+            , <&shifter 21 GPIO_ACTIVE_HIGH>
+            , <&shifter 20 GPIO_ACTIVE_HIGH>
+            , <&shifter 19 GPIO_ACTIVE_HIGH>
+            , <&shifter 11 GPIO_ACTIVE_HIGH>
+            , <&shifter 10 GPIO_ACTIVE_HIGH>
+            , <&shifter 9  GPIO_ACTIVE_HIGH>
+            , <&shifter 8  GPIO_ACTIVE_HIGH>
+            , <&shifter 7  GPIO_ACTIVE_HIGH>
+            , <&shifter 6  GPIO_ACTIVE_HIGH>
         ;
     };
 };
