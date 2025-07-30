@@ -2,6 +2,8 @@
     &spi0 {
         status = "okay";
         cs-gpios = <&gpio0 20 GPIO_ACTIVE_LOW>;
+        pinctrl-0 = <&spi0_default>;
+        pinctrl-names = "default";
         shifter: 595@0 {
             compatible = "zmk,gpio-595";
             status = "okay";
