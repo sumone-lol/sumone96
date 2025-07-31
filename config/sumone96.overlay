@@ -22,7 +22,7 @@
         reg = <0>;
         label = "74HC595";
         #gpio-cells = <2>;
-        ngpios = <8>;
+        ngpios = <24>;
     };
 };
 
