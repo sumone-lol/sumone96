@@ -2,8 +2,8 @@
     spi0_default: spi0_default {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 17)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 22)>,
-                <NRF_PSEL(SPIM_MISO, 0, 24)>;
+                    <NRF_PSEL(SPIM_MOSI, 0, 22)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 24)>;
         };
     };
 };
@@ -11,6 +11,8 @@
 &spi0 {
     status = "okay";
     cs-gpios = <&gpio0 20 GPIO_ACTIVE_LOW>;
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-names = "default";
 
     shifter: 595@0 {
         compatible = "zmk,gpio-595";
@@ -18,6 +20,7 @@
         gpio-controller;
         spi-max-frequency = <200000>;
         reg = <0>;
+        label = "74HC595";
         #gpio-cells = <2>;
         ngpios = <8>;
     };
@@ -29,12 +32,12 @@
         diode-direction = "col2row";
         wakeup-source;
         row-gpios
-            = <&gpio0 2  GPIO_ACTIVE_HIGH>
-            , <&gpio1 15 GPIO_ACTIVE_HIGH>
-            , <&gpio0 9  GPIO_ACTIVE_HIGH>
-            , <&gpio0 10 GPIO_ACTIVE_HIGH>
-            , <&gpio1 11 GPIO_ACTIVE_HIGH>
-            , <&gpio1 13 GPIO_ACTIVE_HIGH>
+            = <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         ;
         col-gpios
             = <&shifter 4  GPIO_ACTIVE_HIGH>
