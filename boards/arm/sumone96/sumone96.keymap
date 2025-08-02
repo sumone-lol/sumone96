@@ -17,14 +17,13 @@
         };
 
         numpad { // Layer 1
-            &layer_state;
             bindings = <
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &kp F13         &kp F14     &kp F15         &kp F16
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &tog 1          &kp PSCRN   &kp SLCK        &kp PAUSE_BREAK
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &kp INS         &kp HOME    &kp PG_UP       &trans
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &kp DEL         &kp END     &kp PG_DN       &trans
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &kp C_AC_UNDO   &kp UP      &kp C_AC_REDO   &trans
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &kp LEFT        &kp DOWN    &kp RIGHT       &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &kp LEFT        &kp DOWN    &kp RIGHT       &trans      &layer_state
             >;
         };
 
