@@ -65,6 +65,18 @@
     }; 
 
     behaviors {
+        led_on: led_on {
+            compatible = "zmk,behavior-led-pwm";
+            color = <255 255 255>;
+            target = <&numlock_led>;
+        };
+
+        led_off: led_off {
+            compatible = "zmk,behavior-led-pwm";
+            color = <0 0 0>;
+            target = <&numlock_led>;
+        };
+
         layer_state: layer_state {
             compatible = "zmk,behavior-layer-state";
             bindings = <
