@@ -4,15 +4,12 @@
 
 / {
     macros {
-            numlock_macro: numlock_macro: {
-                compatible = "zmk,behavior-macro"
-                #binding-cells = <0>;
-                bindings
-                    = <&bl BL_TOG>
-                    , <&tog 1>
-                    ;
-            };
+        numlock_macro: numlock_macro: {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bl BL_TOG &tog 1>;
         };
+    };
 
     keymap {
         compatible = "zmk,keymap";
