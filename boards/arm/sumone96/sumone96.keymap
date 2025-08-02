@@ -66,6 +66,15 @@
     }; 
 
     behaviors {
+        on: on {
+            compatible = "zmk,behavior-on";
+            #binding-cells = <1>;
+        };
+
+        off: off {
+            compatible = "zmk,behavior-off";
+            #binding-cells = <1>;
+        };
         led_on_numlock: led_on_numlock {
             compatible = "zmk,behavior-led-pwm";
             #binding-cells = <0>;
