@@ -17,7 +17,7 @@
         };
 
         numpad { // Layer 1
-            &layer_state
+            &layer_state;
             bindings = <
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &kp F13         &kp F14     &kp F15         &kp F16
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &tog 1          &kp PSCRN   &kp SLCK        &kp PAUSE_BREAK
