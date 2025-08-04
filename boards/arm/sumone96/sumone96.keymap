@@ -27,7 +27,6 @@
 
         numpad { // Layer 1
             bindings = <
-                &on &led_on_numlock &off &led_off_numlock
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &kp F13         &kp F14     &kp F15         &kp F16
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans          &kp PSCRN   &kp SLCK        &kp PAUSE_BREAK
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &kp INS         &kp HOME    &kp PG_UP       &trans
