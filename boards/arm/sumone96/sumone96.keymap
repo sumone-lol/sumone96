@@ -4,10 +4,10 @@
 
 / {
     macros {
-        numlock_macro: numlock_macro: {
+        numlock_macro: numlock_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bl BL_TOG &tog 1>;
+            bindings = <&bl BL_TOG>,<&tog 1>;
         };
     };
 
