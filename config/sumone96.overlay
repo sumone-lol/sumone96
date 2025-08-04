@@ -25,12 +25,13 @@
 };
 
 / {
-    backlight {
-        compatible = "zmk,backlight";
-        gpios = <&shifter 17 GPIO_ACTIVE_HIGH>;
-        levels = <1>;
+    backlight: backlight {
+        compatible = "gpio-leds";
+        numlock_led {
+            gpios = <&shifter 17 GPIO_ACTIVE_HIGH>;
+        };
     };
-    
+
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
