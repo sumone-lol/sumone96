@@ -1,13 +1,19 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/backlight.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     macros {
-        numlock_macro: numlock_macro {
+        numlock_on: numlock_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bl BL_TOG>,<&tog 1>;
+            bindings = <&bl BL_ON>,<&tog 1>,<&KP_NUMLOCK>;
+        };
+        numlock_off: numlock_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bl BL_OFF>,<&tog 1>,<&KP_NUMLOCK>;
         };
     };
 
@@ -16,27 +22,38 @@
 
         default_layer { // Layer 0
             bindings = <
-                &kp ESC     &none   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10     &kp F11     &kp F12         &kp C_PP        &kp C_MUTE      &kp C_VOL_UP    &kp C_VOL_DN
-                &kp GRAVE   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp MINUS   &kp EQUAL   &kp BSPC        &numlock_macro  &kp KP_SLASH    &kp KP_ASTERISK &kp KP_MINUS
-                &kp TAB     &kp Q   &kp W   &kp E   &kp R   &kp T   &kp Y   &kp U   &kp I   &kp O   &kp P   &kp LBKT    &kp RBKT    &kp BSLH        &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp KP_PLUS
-                &kp CAPS    &kp A   &kp S   &kp D   &kp F   &kp G   &kp H   &kp J   &kp K   &kp L   &kp SEMI    &kp APOS   &none   &kp ENTER        &kp KP_N4       &kp KP_N5       &kp KP_N6       &none
-                &kp LSHIFT  &kp Z   &kp X   &kp C   &kp V   &kp B   &kp N   &kp M   &kp COMMA  &kp PERIOD  &kp FSLH &none &none   &kp RSHIFT        &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp KP_ENTER
-                &kp LCTRL   &kp LWIN  &kp LALT   &none  &none  &kp SPACE  &none  &none  &none  &kp RALT  &mo 3  &kp K_CMENU &none  &kp RCTRL        &kp KP_N0       &kp COMMA       &kp KP_DOT      &none
+                &kp ESC     &none   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10     &kp F11     &kp F12         &kp F13         &kp F14     &kp F15         &kp F16             
+                &kp GRAVE   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp MINUS   &kp EQUAL   &kp BSPC        &numlock_on     &kp PSCRN   &kp SLCK        &kp PAUSE_BREAK     
+                &kp TAB     &kp Q   &kp W   &kp E   &kp R   &kp T   &kp Y   &kp U   &kp I   &kp O   &kp P   &kp LBKT    &kp RBKT    &kp BSLH        &kp INS         &kp HOME    &kp PG_UP       &kp KP_PLUS              
+                &kp CAPS    &kp A   &kp S   &kp D   &kp F   &kp G   &kp H   &kp J   &kp K   &kp L   &kp SEMI    &kp APOS   &none   &kp ENTER        &kp DEL         &kp END     &kp PG_DN       &trans              
+                &kp LSHIFT  &kp Z   &kp X   &kp C   &kp V   &kp B   &kp N   &kp M   &kp COMMA  &kp PERIOD  &kp FSLH &none &none   &kp RSHIFT        &kp C_AC_UNDO   &kp UP      &kp C_AC_REDO   &kp KP_ENTER              
+                &kp LCTRL   &kp LWIN  &kp LALT   &none  &none  &kp SPACE  &none  &none  &none  &kp RALT  &mo 4  &kp K_CMENU &none  &kp RCTRL        &kp LEFT        &kp DOWN    &kp RIGHT       &trans              
             >;
         };
 
         numpad { // Layer 1
             bindings = <
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &kp F13         &kp F14     &kp F15         &kp F16
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans          &kp PSCRN   &kp SLCK        &kp PAUSE_BREAK
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &kp INS         &kp HOME    &kp PG_UP       &trans
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &kp DEL         &kp END     &kp PG_DN       &trans
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &kp C_AC_UNDO   &kp UP      &kp C_AC_REDO   &trans
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &kp LEFT        &kp DOWN    &kp RIGHT       &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &kp C_PP        &kp C_MUTE      &kp C_VOL_UP    &kp C_VOL_DN
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &numlock_off    &kp KP_SLASH    &kp KP_ASTERISK &kp KP_MINUS
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp KP_PLUS
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &kp KP_N4       &kp KP_N5       &kp KP_N6       &none
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp KP_ENTER
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &kp KP_N0       &kp COMMA       &kp KP_DOT      &none
             >;
         };
 
-        disable { // Layer 2
+        mouse { // Layer 2
+            bindings = <
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &mkp MCLK
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &mkp LCLK
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &mkp RCLK
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans
+            >;
+        };
+
+        disable { // Layer 3
             bindings = <
                 &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none      &none  &none  &none  &none
                 &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none      &none  &none  &none  &none
@@ -47,18 +64,15 @@
             >;
         };
 
-        function { // Layer 3
+        function { // Layer 4
             bindings = <
-                &studio_unlock  &trans  &trans  &kp C_BKLT_TOG  &kp C_MUTE      &trans  &kp C_VOL_DN  &kp C_VOL_UP  &trans  &kp C_BRI_DN  &kp C_BRI_UP  &trans  &trans  &tog 2  &trans  &trans  &sys_reset  &bootloader
+                &studio_unlock  &trans  &trans  &kp C_BKLT_TOG  &kp C_MUTE      &trans  &kp C_VOL_DN  &kp C_VOL_UP  &trans  &kp C_BRI_DN  &kp C_BRI_UP  &trans  &tog 2  &tog 3  &trans  &trans  &bootloader &sys_reset
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans
             >;
-        };
-        extra1 { // Layer 4
-            status = "reserved";
         };
 
         extra2 { // Layer 5
