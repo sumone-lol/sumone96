@@ -8,12 +8,12 @@
         numlock_on: numlock_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bl BL_ON>,<&tog 1>,<&KP_NUMLOCK>;
+            bindings = <&bl BL_ON>,<&tog 1>,<&kp KP_NUMLOCK>;
         };
         numlock_off: numlock_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bl BL_OFF>,<&tog 1>,<&KP_NUMLOCK>;
+            bindings = <&bl BL_OFF>,<&tog 1>,<&kp KP_NUMLOCK>;
         };
     };
 
