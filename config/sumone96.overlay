@@ -1,3 +1,5 @@
+#include <dt-bindings/zmk/matrix_transform.h>
+
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
@@ -25,6 +27,10 @@
 };
 
 / {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
     backlight: backlight {
         compatible = "gpio-leds";
         numlock_led {
