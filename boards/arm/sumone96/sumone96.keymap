@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/bt.h>
 
 / {
     macros {
@@ -15,6 +16,17 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&bl BL_OFF>,<&tog 1>,<&kp KP_NUMLOCK>;
+        };
+        bt_disc_all: bt_disc_all {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+              = <&bt BT_DISC 0>
+              , <&bt BT_DISC 1>
+              , <&bt BT_DISC 2>
+              , <&bt BT_DISC 3>
+              , <&bt BT_DISC 4>
+              ;
         };
     };
 
@@ -67,12 +79,12 @@
 
         function { // Layer 4
             bindings = <
-                &studio_unlock          &trans  &kp C_BKLT_TOG  &kp C_MUTE  &trans  &kp C_VOL_DN  &kp C_VOL_UP  &trans  &kp C_BRI_DN  &kp C_BRI_UP  &trans  &tog 2  &tog 3  &trans  &trans  &bootloader &sys_reset
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                              &trans  &trans  &trans      &out OUT_TOG
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                              &trans  &trans  &trans      &trans
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans                                              &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                  &trans                                              &trans  &trans  &trans      &trans
-                &trans  &trans  &trans                  &trans                          &trans  &trans  &trans          &trans                                              &trans  &trans  &trans
+                &studio_unlock          &trans  &kp C_BKLT_TOG  &kp C_MUTE  &trans  &kp C_VOL_DN  &kp C_VOL_UP  &trans  &kp C_BRI_DN  &kp C_BRI_UP  &trans  &tog 2  &tog 3  &bt BT_PRV   &bt BT_NXT  &bootloader &sys_reset
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                              &bt_disc_all &bt BT_CLR  &trans      &out OUT_TOG
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                              &trans       &trans      &trans      &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans                                              &trans       &trans      &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                  &trans                                              &trans       &trans      &trans      &trans
+                &trans  &trans  &trans                  &trans                          &trans  &trans  &trans          &trans                                              &trans       &trans      &trans
             >;
         };
 
